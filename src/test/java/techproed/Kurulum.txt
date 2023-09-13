@@ -1,0 +1,28 @@
+TESTNG FRAMEWORK KULUMU:
+    1-Selenium-Java, WebDriverManager ve testNG dependency'lerini pom.xml dosyasına koyarız.
+    2-test>java>pages --> Locate lerimizi bu package altındaki class'larda tutarız.
+      test>java>tests --> Tests package'ı altındaki class'larda test methodlarımız olusturur test scriptlerimizi yazarız.
+      Locate lerimizi pages altındaki class'lardan obje oluşturarak alırız.
+      test>java>utilities --> Utilities package'ı altında Configuration gibi dosyalarımız ve Driver, reuseble
+      methodlarımızın olduğu class'larımız olur. Class ismi ile yada obje ile bu class'lardaki methodları kullanırız
+
+    NOT: POM(Page Object Model)
+            Test senaryolarının daha az kod ile yazılmasına ve bakımının daha kolay yapılmasına olanak sağlayan
+         yazılım test yöntemidir. TestNG ve Cucumber framework'lerinde bu yapı kullanırız.
+
+    3-Utilities package'ı altında Driver isminde bir class oluştururuz. Bu class içerisinde static bir method ile
+    driver ayarlarımızı yaparız. Ve class ismini kullanarak extends ile tek bir class a bağlı kalmadan istediğimiz
+    yerde driver'i çağırır istediğimiz yerde driver'ı kapatarız.
+
+    4-Pages package'ı altında locatini alacağımız sayfa için bir class oluştururuz.AmazonPage class'ı içinde
+    ayrıntılı not yazıldı.
+    5-TestNG de temel test datalarımızı .properties uzantılı dosyada tutarız. Bunun için proje seviyesinde sağ klik
+    yapıp bir dosya oluştururuz. Dosyamıza isim olarak configuration.properties ismini veririz.
+    Bu dosyadaki dataları okuyabilmesi için utilities package'ı altında ConfigReader isminde bir class oluşturup
+    class içinde de belirttiğimiz gibi .properties uzantılı dosyadaki dataları test class'larımızda okuyabiliriz.
+
+    6-TestNG de test datalarini Excel'den alabiliriz. Bunun icin oncelikle pom.xml dosyamiza
+     poi dependencylerini koyariz, sonra test classlarimizda her seferinde FileInputStream ve
+      Workbook arayuzlerini kullanmamak icin utilities package i altinda excel reader isminde
+      ya da excel utils isminde bir class olustrup gerekli excel yapisini bu class'ta olusturup methodlar
+      ile satir ve sutun bilgilerine cok rahat ulasabiliriz

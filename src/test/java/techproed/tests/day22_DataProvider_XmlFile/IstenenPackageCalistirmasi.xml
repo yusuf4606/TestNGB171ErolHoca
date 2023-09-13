@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Istenen Packageleri calistirma">
+            <packages>
+                <package name="techproed.tests.day19_POM"/>
+                <package name="techproed.tests.day20_PropertiesKullanimi"/>
+            </packages>
+    </test>
+</suite>
+        <!-- TestNG de istediğimiz package'lari, istediğimiz class'ları, istediğimiz methodları ve grupları
+         xml file sayesinde tek bir yerden çalıştırabiliriz. XML file'i otomatik oluşturabilmek için ilk olarak
+         file>setting>plugins>marketPlace bölümünden arama kısmına xml yazarak xml file pluginini projemi yükleriz
+         ve istediğimiz bir class yada package üzerinde sağ klik yapıp create testNG xml sekmesi ile xml file'i
+         hazır oluşturabiliriz. -->
+
+<!--  -->
