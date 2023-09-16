@@ -26,7 +26,7 @@ public class HomeWork_03 {
         Giris yapildiginda hata mesaji alınmamalı
             */
 
-    @Test
+    @Test(groups = "odev")
     public void negativeTest() {
         // Bluerental websayfasina git
         Driver.getDriver().get(ConfigReader.getProperty("blueRentalUrl"));
@@ -44,7 +44,7 @@ public class HomeWork_03 {
         Assert.assertTrue(rentalPage.pleaseFirstLoginText.isDisplayed());
     }
 
-    @Test
+    @Test(groups = "odev")
     public void positiveTest() throws IOException {
         // Bluerental websayfasina git
         Driver.getDriver().get(ConfigReader.getProperty("blueRentalUrl"));
@@ -61,16 +61,27 @@ public class HomeWork_03 {
         FileInputStream fis = new FileInputStream(dosyaYolu);
         Workbook workbook = WorkbookFactory.create(fis);
 
-        String usarname = workbook.getSheet(sayfaAdi).getRow(1).getCell(0).toString();
+        String username = workbook.getSheet(sayfaAdi).getRow(1).getCell(0).toString();
         String password = workbook.getSheet(sayfaAdi).getRow(1).getCell(1).toString();
         // usarname ve email gir
-        rentalPage.userEmail.sendKeys(usarname,
+        rentalPage.userEmail.sendKeys(username,
                 Keys.TAB, password,
                 Keys.ENTER);
         ReusableMethods.bekle(2);
         // giris yapildigini dogrulayalim --> logOut butonu gorunur mu?
+        ReusableMethods.ddmIndex(rentalPage.carSelectDDM, 7);
+
+        rentalPage.pickUPselectPlace.sendKeys("Eskisehir",    // araci aldigimiz sehiri sectik
+                Keys.TAB, "Eskisehir",          // araci biraktigimiz sehri sectik
+                Keys.TAB, "15092023",           // alis tarihi
+                Keys.TAB, "0800",               // alis saati
+                Keys.TAB, "20092023",           // araci birakma tarihi
+                Keys.TAB, "0800",               // birakma saati
+                Keys.ENTER);                    // continue butonuna bastik
+        ReusableMethods.bekle(2);
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(rentalPage.profilButton.isDisplayed());
+        softAssert.assertTrue(rentalPage.theCarIsNotAvailableText.isDisplayed());
         softAssert.assertAll();
     }
 }

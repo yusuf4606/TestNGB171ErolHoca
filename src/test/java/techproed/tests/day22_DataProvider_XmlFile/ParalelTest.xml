@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="classes" thread-count="4">
+    <test name="BelirliTestlerinParalelCalistirilmasi">
+        <classes>
+            <class name="techproed.tests.day22_DataProvider_XmlFile.C06_ParallelTest">
+                <methods>
+                    <include name="test01"/>
+                    <include name="test02"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.day22_DataProvider_XmlFile.C07_ParallelTest"/>
+        </classes>
+    </test>
+</suite>
+
+<!-- TestNG de testlerimi es zamanli calistirabilmek icin oncelikle classlarimizdaki kullanacagimiz
+ driver ayarlarini yapmamiz gerekir Test classimiz icindeki methodlari es zamanli olarak calistirabilmek
+ icin xml file a ihtiyacimiz var. Paralel Test yapacagimiz classtan xml file olusturduktan sonra
+  <suite> tag indaki name parametresinden sonra parallel parametresi eklenir ve methodlar icin mi
+  class lar icinmi poralel test yapacagimizi belirtiriz sonra Thread count parametresi ile ayni anda
+  kac tane browser calistirmak istersek onu belirtiriz-->

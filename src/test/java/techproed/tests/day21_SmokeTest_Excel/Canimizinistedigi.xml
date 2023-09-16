@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Canimizin istediginin calisitirilmasi">
+        <groups>
+            <run>
+                <exclude name="odev"></exclude>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="techproed.tests.day21_SmokeTest_Excel"></package>
+        </packages>
+
+
+
+
+    </test>
+</suite>

@@ -53,13 +53,20 @@ public class BlueRentalPage {
     @FindBy(xpath = "//*[@name='pickUpLocation']")
     public WebElement pickUPselectPlace;
 
+
     @FindBy(xpath = "(//*[.='Please first login'])[2]")
     public WebElement pleaseFirstLoginText;
 
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement theCarIsNotAvailableText;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement emailMustBeAValidEmail;
 
 
 
-
+    @FindBy(xpath = "//*[.='OK']")
+    public WebElement logOutConfirm;
 
 
 

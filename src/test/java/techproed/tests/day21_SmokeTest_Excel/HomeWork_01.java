@@ -23,7 +23,7 @@ public class HomeWork_01 {
     Customer password: fakepass
     */
 
-    @Test
+    @Test(groups = "odev")
     public void test01() {
         // sayfaya git
 
